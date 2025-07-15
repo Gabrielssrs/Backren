@@ -79,7 +79,7 @@
                         </label>
                     </div>
                 </div>
-          <h2 class="form-section-title mt-4">Detalle de Consulta <span class="required-star"></span></h2>
+          <h2 class="form-section-title mt-4">Tipo de Consulta <span class="required-star"></span></h2>
 
           <select class="form-select form-select-sm" aria-label="Small select example">
             <option selected>Selecciona</option>
@@ -95,6 +95,23 @@
             <a href="validacion.html" class="mi-boton-personalizado">INICIAR</a>
           </div>
         </div>
+        <h2 class="form-section-title mt-4">Detalle de la Consulta <span class="required-star">*</span></h2>
+
+                <div class="mb-3">
+                    <label for="detalleConsulta" class="form-label question-label">Por favor, describa detalladamente su consulta:</label>
+                    <textarea class="form-control" id="detalleConsulta" rows="5" placeholder="Escriba aquí su consulta..." required></textarea>
+                </div>
+
+                <div class="form-check mb-4">
+                    <input class="form-check-input" type="checkbox" id="aceptarTerminos" required>
+                    <label class="form-check-label" for="aceptarTerminos">
+                        Acepto los términos y condiciones <span class="required-star">*</span>
+                    </label>
+                </div>
+
+                <div class="text-center">
+                    <button type="submit" class="mi-boton-personalizado">Enviar</button>
+                </div>
         <div class="alert alert-primary mt-4 text-center fw-bold">
           Este servicio es aplicable únicamente a mayores de 17 años que cuenten con DNI azul / DNI electrónico.
         </div>
