@@ -1,0 +1,377 @@
+/* Estilos generales */
+body {
+    margin: 0;
+    background-color: #f8f9fa;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+/* Encabezado y navegación */
+#header-fluid {
+    background-color: #fff;
+}
+
+#navbar {
+    color: yellow;
+    background-color: #ffbc00;
+}
+
+#nav-fluid {
+    background-color: #f0a623;
+    margin-top: -15px;
+}
+
+#nav-ul .nav-item .nav-link {
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 13px 13px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+#nav-ul .nav-item .nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+#dada {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    font-size: 14pt;
+    font-weight: bold;
+    padding-left: 135px;
+}
+
+/* Botones */
+.btn-iniciar {
+    background-color: #fbbc05;
+    color: #fff;
+    font-weight: bold;
+}
+
+.mi-boton-personalizado,
+.button {
+    display: inline-block;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.mi-boton-personalizado {
+    padding: 9px 10px;
+    background-color: #007bff;
+    color: white;
+    font-size: 14px;
+    text-align: center;
+    margin-left: -8px;
+}
+
+.mi-boton-personalizado:hover {
+    background-color: #0056b3;
+}
+
+.mi-boton-personalizado:active {
+    background-color: #003d80;
+    transform: translateY(1px);
+}
+
+.button {
+    background-color: #f0f0f0;
+    color: #2e6284;
+    padding: 10px 25px;
+    text-transform: uppercase;
+}
+
+.button:hover {
+    background-color: #e0e0e0;
+}
+
+/* Imágenes */
+.banner-image,
+.responsive-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-top: -30px;
+}
+
+.responsive-image {
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+/* Cajas y contenido */
+.tramite-box {
+    background-color: #e8f0fe;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+}
+
+#prin {
+    width: 100%;
+}
+
+#renie {
+    text-align: center;
+}
+
+/* Grid */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -15px 30px;
+    align-items: stretch;
+}
+
+.column {
+    flex: 1 1 50%;
+    padding: 0 15px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.content-section{
+    margin-top: 50px;
+}
+/* Tarjetas */
+.card {
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    min-height: 180px;
+    width: 80%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.card-content {
+    flex: 1;
+    padding: 20px;
+    text-align: center;
+}
+
+.card-content h3 {
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.card-image {
+    flex-shrink: 0;
+    width: 38%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.card-image-right .card-image {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.card-image-left .card-image {
+    order: -1;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.card-image-left .card-image img {
+    border-radius: 10px 0 0 10px;
+}
+
+.card-image-right .card-image img {
+    border-radius: 0 10px 10px 0;
+}
+
+.card.bg-transparent {
+    background: transparent !important;
+    border: none;
+}
+
+.card-title {
+    margin-bottom: 0.5rem;
+}
+
+.text-white {
+    color: #fff !important;
+}
+
+/* Footer */
+footer,
+.fondo-footer {
+    background-color: #2d5873;
+}
+
+footer {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.logo-footer {
+    height: 40px;
+}
+
+/* Media Queries */
+@media (max-width: 991px) {
+    .mb-lg-0 {
+        margin-bottom: 0 !important;
+    }
+    .text-lg-start {
+        text-align: left !important;
+    }
+    .form-control{
+        margin-top: 20px;
+    }
+    #nav-fluid{
+    margin-top: -30px
+    }
+}  
+
+@media (max-width: 767.98px) {
+    #nav-ul {
+        justify-content: flex-start !important;
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        padding-bottom: 5px;
+    }
+    #nav-ul::-webkit-scrollbar {
+        display: none;
+    }
+    #nav-ul .nav-item {
+        flex-shrink: 0;
+        margin-right: 20px;
+    }
+    #nav-ul .nav-item:last-child {
+        margin-right: 0;
+    }
+    .column {
+        flex: 1 1 100%;
+    }
+    .form-control{
+        margin-top: 20px;
+    }
+    #nav-fluid{
+    margin-top: -30px
+    }    
+}
+
+@media (min-width: 768px) {
+    #nav-ul {
+        overflow-x: hidden;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .form-control{
+        margin-top: 20px;
+    }
+    #nav-fluid{
+    margin-top: -30px
+    }
+    
+}
+
+/*   ******************************************RESPONSIVE FORMULARIO
+ * RESPONSIVE @MEDIA QUERIES FOR THE FORM
+ *
+ * These rules complement Bootstrap's built-in responsiveness
+ * and refine the layout/sizing for various screen sizes.
+ */
+
+/* Small devices (phones, 576px and up) */
+@media (min-width: 576px) {
+    .form-container-wrapper {
+        padding: 40px; /* Slightly more padding on larger phones */
+        margin-top: -30px;
+    }
+    .form-title {
+        font-size: 2rem; /* Larger title on slightly bigger screens */
+    }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    .form-container-wrapper {
+        max-width: 700px; /* Limit form width on tablets for better readability */
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: -15px;
+    }
+    .form-title {
+        font-size: 2.2rem; /* Even larger title */
+    }
+    .form-section-title {
+        font-size: 1.3rem; /* Slightly larger section titles */
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    .form-container-wrapper {
+        max-width: 800px; /* Max width for desktop views */
+        padding: 50px;
+        margin-top: -15px;
+    }
+    .form-title {
+        font-size: 2.5rem; /* Larger title on desktops */
+    }
+    .form-section-title {
+        font-size: 1.4rem;
+    }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    .form-container-wrapper {
+        max-width: 900px; /* Slightly wider on very large screens */
+        margin-top: -15px;
+    }
+    
+}
+
+/* --- Optional: Specific adjustments for very small screens (less than 576px) --- */
+/* Bootstrap is mobile-first, so base styles are for these.
+   You'd only add rules here if you need to *override* base styles for even smaller devices.
+   For example, if you want smaller padding on tiny phones. */
+@media (max-width: 575.98px) {
+    .form-container-wrapper {
+        padding: 20px; /* Smaller padding on very small phones */
+        margin-top: 20px;
+        margin-bottom: 20px;
+        /* Remove box-shadow on very small screens if it looks cluttered */
+        box-shadow: none;
+        border-radius: 0; /* No border-radius on very small screens if desired */
+    margin-top: -15px;
+    }
+    .form-header-image {
+        max-width: 100px; /* Smaller logo on tiny screens */
+    }
+    .form-title {
+        font-size: 1.5rem; /* Smaller title for compact screens */
+    }
+}
