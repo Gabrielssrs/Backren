@@ -37,7 +37,7 @@
             <li class="nav-item"><a class="nav-link" href="tramite.html">TRAMITES</a></li>
             <li class="nav-item"><a class="nav-link" href="#">SERVICIOS EN LÍNEA</a></li>
             <li class="nav-item"><a class="nav-link" href="#">CONÓCENOS</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">APOYO SOCIAL</a></li>
+            <li class="nav-item"><a class="nav-link" href="consulta.html">CONSULTA</a></li>
             <li class="nav-item"><a class="nav-link" href="#">REGISTRO ELECTORAL</a></li>
           </ul>
         </div>
@@ -51,71 +51,67 @@
       </div>
       <div class="col-md-6">
         <h2 class="form-section-title mt-4">Tipo de Consulta <span class="required-star"></span></h2>
-
-                <div class="mb-3">
-                    <label class="form-label question-label">Por favor, seleccione el tipo de consulta que desea realizar:</label>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="tipoConsulta" id="consultaDNI" value="dni" required>
-                        <label class="form-check-label" for="consultaDNI">
-                            Trámites
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="tipoConsulta" id="consultaActas" value="actas">
-                        <label class="form-check-label" for="consultaActas">
-                            Consultas
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="tipoConsulta" id="consultaServicios" value="servicios">
-                        <label class="form-check-label" for="consultaServicios">
-                            Estado de trámites
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="tipoConsulta" id="otraConsulta" value="otra">
-                        <label class="form-check-label" for="otraConsulta">
-                            Otra consulta
-                        </label>
-                    </div>
-                </div>
-          <h2 class="form-section-title mt-4">Tipo de Consulta <span class="required-star"></span></h2>
-
-          <select class="form-select form-select-sm" aria-label="Small select example">
-            <option selected>Selecciona</option>
-            <option value="1">Copia de actas</option>
-            <option value="2">Renovacion</option>
-            <option value="3">Citas</option>
-            <option value="4">Duplicados</option>
-            <option value="5">Copias de Actas</option>
-          </select><br>
-          <p>Para consultas presenciales, se utilizará un lector biométrico para validar su identidad a través de su huella
-            dactilar.</p>
-          <div class="container-fluid">
-            <a href="validacion.html" class="mi-boton-personalizado">INICIAR</a>
+        <div class="mb-3">
+          <label class="form-label question-label">Por favor, seleccione el tipo de consulta que desea realizar:</label>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="tipoConsulta" id="consultaDNI" value="dni" required>
+            <label class="form-check-label" for="consultaDNI">
+              Trámites
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="tipoConsulta" id="consultaActas" value="actas">
+            <label class="form-check-label" for="consultaActas">
+              Consultas
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="tipoConsulta" id="consultaServicios" value="servicios">
+            <label class="form-check-label" for="consultaServicios">
+              Estado de trámites
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="tipoConsulta" id="otraConsulta" value="otra">
+            <label class="form-check-label" for="otraConsulta">
+              Otra consulta
+            </label>
           </div>
         </div>
-        <h2 class="form-section-title mt-4">Detalle de la Consulta <span class="required-star">*</span></h2>
-
-                <div class="mb-3">
-                    <label for="detalleConsulta" class="form-label question-label">Por favor, describa detalladamente su consulta:</label>
-                    <textarea class="form-control" id="detalleConsulta" rows="5" placeholder="Escriba aquí su consulta..." required></textarea>
-                </div>
-
-                <div class="form-check mb-4">
-                    <input class="form-check-input" type="checkbox" id="aceptarTerminos" required>
-                    <label class="form-check-label" for="aceptarTerminos">
-                        Acepto los términos y condiciones <span class="required-star">*</span>
-                    </label>
-                </div>
-
-                <div class="text-center">
-                    <button type="submit" class="mi-boton-personalizado">Enviar</button>
-                </div>
-        <div class="alert alert-primary mt-4 text-center fw-bold">
-          Este servicio es aplicable únicamente a mayores de 17 años que cuenten con DNI azul / DNI electrónico.
+        <h2 class="form-section-title mt-4">Tipo de Consulta <span class="required-star"></span></h2>
+        <select class="form-select form-select-sm" aria-label="Small select example">
+          <option selected>Selecciona</option>
+          <option value="1">Copia de actas</option>
+          <option value="2">Renovacion</option>
+          <option value="3">Citas</option>
+          <option value="4">Duplicados</option>
+          <option value="5">Copias de Actas</option>
+        </select><br>
+        <div class="container-fluid">
+          <!-- <a href="validacion.html" class="mi-boton-personalizado">INICIAR</a> -->
         </div>
       </div>
+      <h2 class="form-section-title mt-4">Detalle de la Consulta <span class="required-star">*</span></h2>
+      <div class="mb-3">
+        <label for="detalleConsulta" class="form-label question-label">Por favor, describa detalladamente su
+          consulta:</label>
+        <textarea class="form-control" id="detalleConsulta" rows="5" placeholder="Escriba aquí su consulta..."
+          required></textarea>
+      </div>
+      <div class="form-check mb-4">
+        <input class="form-check-input" type="checkbox" id="aceptarTerminos" required>
+        <label class="form-check-label" for="aceptarTerminos">
+          Acepto los términos y condiciones <span class="required-star">*</span>
+        </label>
+      </div>
+      <div class="text-center">
+        <button type="button" onclick="enviarConsulta()" class="mi-boton-personalizado">GESTIONAR CITA</button>
+      </div>
+      <div class="alert alert-primary mt-4 text-center fw-bold">
+        Para consultas presenciales, se utilizará un lector biométrico para validar su identidad a través de su
+        huelladactilar.
+      </div>
+    </div>
     </div>
   </section>
   <footer id="pie" class="container-fluid" style="background-color: #2d5873;">
@@ -152,7 +148,7 @@
             <div class="card-body p-0">
               <h6 class="card-title mb-2"><strong>Servicios en línea</strong></h6>
               <ul class="list-unstyled mb-0">
-                <li>Empresas</li>
+                <li><a class="nav-link" href="reclamo.html">Reclamo</a></li>
                 <li>Ciudadano</li>
                 <li>Consultas</li>
               </ul>
@@ -162,5 +158,76 @@
       </div>
     </div>
   </footer>
+  <script>
+  function enviarConsulta() {
+    // Obtener el tipo de consulta seleccionado
+    const tipoConsultaRadio = document.querySelector('input[name="tipoConsulta"]:checked');
+    const tipoTramiteSelect = document.querySelector('.form-select');
+    const detalleConsulta = document.getElementById('detalleConsulta').value;
+    const aceptarTerminos = document.getElementById('aceptarTerminos').checked;
+
+    // Validaciones
+    if (!tipoConsultaRadio) {
+      alert('Por favor, seleccione un tipo de consulta.');
+      return;
+    }
+
+    if (tipoTramiteSelect.value === 'Selecciona') {
+      alert('Por favor, seleccione un tipo de trámite.');
+      return;
+    }
+
+    if (!detalleConsulta.trim()) {
+      alert('Por favor, describa su consulta.');
+      return;
+    }
+
+    if (!aceptarTerminos) {
+      alert('Debe aceptar los términos y condiciones.');
+      return;
+    }
+
+    // Preparar datos para enviar
+    const data = {
+      tipo_consulta: tipoConsultaRadio.value,
+      tipo_tramite: tipoTramiteSelect.options[tipoTramiteSelect.selectedIndex].text,
+      detalle_tramite: detalleConsulta
+    };
+
+    console.log('Enviando datos:', data);
+
+    // Enviar datos al backend
+    fetch('https://reniec-3mfu.onrender.com/consulta/registrar', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    })
+    .then(response => {
+      if (response.ok) {
+        return response.text(); // Cambiar a text() porque devuelve String
+      }
+      throw new Error('Error en el registro. Código de estado: ' + response.status);
+    })
+    .then(responseData => {
+      console.log('Success:', responseData);
+      // Guardar datos en localStorage
+      localStorage.setItem('consultaRegistrada', JSON.stringify(data));
+      alert('¡Consulta registrada con éxito!');
+      // Limpiar formulario
+      document.querySelector('input[name="tipoConsulta"]:checked').checked = false;
+      tipoTramiteSelect.selectedIndex = 0;
+      document.getElementById('detalleConsulta').value = '';
+      document.getElementById('aceptarTerminos').checked = false;
+      // Redirigir a validación
+      window.location.href = 'validacion.html';
+    })
+    .catch((error) => {
+      console.error('Error:', error);
+      alert('Hubo un error al registrar la consulta. Por favor, inténtelo de nuevo.');
+    });
+  }
+  </script>
 </body>
 </html>

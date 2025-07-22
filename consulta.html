@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta RENIEC</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <header class="container-fluid">
+        <div class="container">
+            <div class="row align-items-center py-3">
+                <div
+                    class="col-12 col-lg-8 d-flex flex-column flex-lg-row align-items-center justify-content-center justify-content-lg-start mb-2 mb-lg-0 order-0 order-lg-0">
+                    <div
+                        class="col-12 col-lg-4 text-center text-lg-start d-flex justify-content-center align-items-center mb-2 mb-lg-0">
+                        <a href="/"><img src="img/logo-reniec-azul.png" alt="RENIEC Logo" class="img-fluid"></a>
+                        <img src="img/usser.png" alt="Icono Usuario" class="img-fluid ms-3 d-block d-lg-none"
+                            width="40">
+                    </div>
+                    <div class="col-12 col-lg-8 flex-grow-1 mb-2 mb-lg-0 d-block d-lg-block">
+                        <input type="text" class="form-control" placeholder="Ingresa tu consulta">
+                    </div>
+                </div>
+                <div class="col-lg-2 text-end d-none d-lg-block order-lg-1">
+                    <a href="reniec2.html"><img src="img/usser.png" alt="Icono Usuario" class="img-fluid"
+                            width="40"></a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <nav class="container-fluid" id="nav-fluid">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <ul class="nav justify-content-center" id="nav-ul">
+                        <li class="nav-item"><a class="nav-link" href="/">INICIO</a></li>
+                        <li class="nav-item"><a class="nav-link" href="tramite.html">TRAMITES</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">SERVICIOS EN LÍNEA</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">CONÓCENOS</a></li>
+                        <li class="nav-item"><a class="nav-link" href="consulta.html">CONSULTA</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">REGISTRO ELECTORAL</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <section>
+    <div class="container-fluid">
+        <div class="row">
+            <img src="img/mesapartes.png" alt="Descripción del banner" class="banner-image">
+        </div>
+        <div class="alert alert-primary mt-4 text-center fw-bold">
+                    Deberá rellenar todos los campos solicitados para acceder a la informacion solictada. Recuerde que toda informacion es confidencial.
+        </div>
+        <br><br>
+        <div class=" d-flex justify-content-center align-items-center">
+            <div class="validation-card">
+                <h2 class="card-title"><i class="fas fa-user-check"></i> Consulta tu Cita</h2>
+                <p class="card-description">Estimado usuario para realizar la consulta de tu cita, primero debes
+                    validar tus datos.</p>
+                <form class="validation-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="dni">DNI</label>
+                            <input type="text" id="dni" name="dni" placeholder="Ingrese su DNI">
+                        </div>
+                        <!-- <div class="form-group">
+                            <label for="issue-date">Fecha de emisión del DNI</label>
+                            <input type="date" id="issue-date" name="issue-date" placeholder="Ingrese fecha">
+                        </div> -->
+                    </div>
+                    <!-- <div class="form-group captcha-group">
+                        <label for="captcha-text">Código CAPTCHA</label>
+                        <div class="captcha-input-group">
+                            <div class="captcha-image">
+                                <img src="img/capcha.png" alt="Código CAPTCHA">
+                                <button type="button" class="refresh-captcha" aria-label="Recargar CAPTCHA">
+                                    <i class="fas fa-sync-alt"></i>
+                                </button>
+                            </div>
+                            <input type="text" id="captcha-text" name="captcha-text"
+                                placeholder="Ingrese el texto de la imagen">
+                        </div>
+                    </div> -->
+                    <div class="container-fluid"><br>
+                                <button type="submit" class="mi-boton-personalizado">CONSULTAR</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section><br><br><br>
+    <footer id="pie" class="container-fluid" style="background-color: #2d5873;">
+        <div class="container py-4">
+            <div class="row text-white">
+                <div class="col-lg-3 col-12 mb-3 mb-lg-0 text-center text-lg-start">
+                    <img src="img/logofooter.png" alt="RENIEC Logo Footer" style="height: 40px;">
+                </div><br><br><br>
+                <div class="col-lg-3 col-6 mb-3 mb-lg-0">
+                    <div class="bg-transparent border-0 text-white">
+                        <div class="card-body p-0">
+                            <h6 class="card-title mb-2"><strong>Conócenos</strong></h6>
+                            <ul class="list-unstyled mb-0">
+                                <li>Sobre RENIEC</li>
+                                <li>Iniciativas y Recursos</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-6 mb-3 mb-lg-0">
+                    <div class=" bg-transparent border-0 text-white">
+                        <div class="card-body p-0">
+                            <h6 class="card-title mb-2"><strong>Ciudadano</strong></h6>
+                            <ul class="list-unstyled mb-0">
+                                <li>DNI</li>
+                                <li>Actas</li>
+                                <li>Certificados Digitales</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-12">
+                    <div class="bg-transparent border-0 text-white">
+                        <div class="card-body p-0">
+                            <h6 class="card-title mb-2"><strong>Servicios en línea</strong></h6>
+                            <ul class="list-unstyled mb-0">
+                                <li><a class="nav-link" href="reclamo.html">Reclamo</a></li>
+                                <li>Ciudadano</li>
+                                <li>Consultas</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+<script>
+    document.querySelector('.validation-form').addEventListener('submit', function(event) {
+        event.preventDefault(); // Evita que el formulario se envíe de la manera tradicional
+
+        const dni = document.getElementById('dni').value;
+
+        if (!dni) {
+            alert('Por favor, ingrese el DNI.');
+            return;
+        }
+
+        const url = `https://reniec-3mfu.onrender.com/citas/buscar?dni=${encodeURIComponent(dni)}`;
+
+        fetch(url)
+            .then(response => {
+                if (response.ok) {
+                    return response.json();
+                }
+                if (response.status === 404) {
+                    throw new Error('No se encontró una cita con el DNI proporcionado.');
+                }
+                throw new Error('Ocurrió un error en el servidor.');
+            })
+            .then(data => {
+                // Si la cita se encuentra, la guardamos en localStorage
+                localStorage.setItem('citaRegistrada', JSON.stringify(data));
+                // Y redirigimos a la página de solicitud para mostrar los detalles
+                window.location.href = 'solicitud.html';
+            })
+            .catch(error => {
+                console.error('Error en la consulta:', error);
+                alert(error.message);
+            });
+    });
+</script>
+</body>
+</html>
+
+
+
+

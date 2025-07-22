@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,8 +7,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/main.css">
 </head>
-
-<body style="background-color: #f3f4f6;">
+<body>
     <header class="container-fluid">
         <div class="container">
             <div class="row align-items-center py-3">
@@ -26,8 +24,7 @@
                     </div>
                 </div>
                 <div class="col-lg-2 text-end d-none d-lg-block order-lg-1">
-                    <a href="reniec2.html"><img src="img/usser.png" alt="Icono Usuario" class="img-fluid"
-                            width="40"></a>
+                    <a href="reniec2.html"><img src="img/usser.png" alt="Icono Usuario" class="img-fluid" width="40"></a>
                 </div>
             </div>
         </div>
@@ -41,7 +38,7 @@
                         <li class="nav-item"><a class="nav-link" href="tramite.html">TRAMITES</a></li>
                         <li class="nav-item"><a class="nav-link" href="#">SERVICIOS EN LÍNEA</a></li>
                         <li class="nav-item"><a class="nav-link" href="#">CONÓCENOS</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">APOYO SOCIAL</a></li>
+                        <li class="nav-item"><a class="nav-link" href="consulta.html">CONSULTA</a></li>
                         <li class="nav-item"><a class="nav-link" href="#">REGISTRO ELECTORAL</a></li>
                     </ul>
                 </div>
@@ -56,14 +53,21 @@
                         <div class="card-body text-center">
                             <h4>MI SOLICITUD</h4>
                             <h5>N° DE TRÁMITE</h5>
-                            <p>#9999</p>
+                            <p id="numeroTramite">#9999</p>
+                            <h5>DATOS DEL SOLICITANTE:</h5>
+                            <div class="text-start">
+                                <p><strong>Nombres:</strong> <span id="mostrarNombres">-</span></p>
+                                <p><strong>Apellidos:</strong> <span id="mostrarApellidos">-</span></p>
+                                <p><strong>Documento:</strong> <span id="mostrarDocumento">-</span></p>
+                                <p><strong>Correo:</strong> <span id="mostrarCorreo">-</span></p>
+                                <p><strong>Teléfono:</strong> <span id="mostrarTelefono">-</span></p>
+                            </div>
                             <h5>DESCRIPCIÓN:</h5>
-                            <p>
-                                XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-                            </p>
-                            <h5>TOTAL: $999.99</h5>
-                            <div class="container-fluid">
-                                <a href="#" class="mi-boton-personalizado">Realizar Pago</a>
+                            
+                            <h5>ESTADO: <span id="estadoSolicitud" class="badge bg-success"></span></h5>
+                            <div class="container-fluid mt-3">
+                                <a href="consulta.html"onclick="consultarCita()" class="mi-boton-personalizado me-2">Consultar Estado</A>
+                                <a href="index.html" class="mi-boton-personalizado">Regresar inicio</a>
                             </div>
                         </div>
                     </div>
@@ -71,6 +75,7 @@
             </div>
         </div>
     </section>
+    <br>
     <footer id="pie" class="container-fluid" style="background-color: #2d5873;">
         <div class="container py-4">
             <div class="row text-white">
@@ -105,7 +110,7 @@
                         <div class="card-body p-0">
                             <h6 class="card-title mb-2"><strong>Servicios en línea</strong></h6>
                             <ul class="list-unstyled mb-0">
-                                <li>Empresas</li>
+                                <li><a class="nav-link" href="reclamo.html">Reclamo</a></li>
                                 <li>Ciudadano</li>
                                 <li>Consultas</li>
                             </ul>
@@ -115,6 +120,115 @@
             </div>
         </div>
     </footer>
+    <script>
+    // Cargar datos al cargar la página
+    window.addEventListener('load', function() {
+        cargarDatosSolicitud();
+    });
+
+    function cargarDatosSolicitud() {
+        // Obtener datos del localStorage si existen
+        const datosGuardados = localStorage.getItem('citaRegistrada');
+        if (datosGuardados) {
+            const datos = JSON.parse(datosGuardados);
+            mostrarDatos(datos);
+        } else {
+            // Si no hay datos guardados, usar datos de ejemplo o hacer consulta
+            consultarUltimaCita();
+        }
+    }
+
+    function mostrarDatos(datos) {
+        // CORRECCIÓN: Usar camelCase para coincidir con el JSON de la entidad Java
+        document.getElementById('mostrarNombres').textContent = datos.nombres || '-';
+        document.getElementById('mostrarApellidos').textContent = datos.apellidos || '-';
+        document.getElementById('mostrarDocumento').textContent = datos.numeroDocumento || '-';
+        document.getElementById('mostrarCorreo').textContent = datos.correoElectronico || '-';
+        document.getElementById('mostrarTelefono').textContent = datos.numeroTelefono || 'No proporcionado';
+
+        // Usar el ID de la cita real como número de trámite
+        if (datos.idCita) {
+            document.getElementById('numeroTramite').textContent = '#' + String(datos.idCita).padStart(8, '0');
+        } else {
+            document.getElementById('numeroTramite').textContent = 'N/A';
+        }
+
+        // Mostrar el estado dinámicamente
+        const estadoSpan = document.getElementById('estadoSolicitud');
+        if (datos.estado && datos.estado.nombre) {
+            estadoSpan.textContent = datos.estado.nombre.toUpperCase();
+            if (datos.estado.nombre.toLowerCase() === 'registrado') {
+                estadoSpan.className = 'badge bg-success';
+            } else {
+                estadoSpan.className = 'badge bg-secondary';
+            }
+        } else {
+            // Fallback si no viene el estado
+            estadoSpan.textContent = 'REGISTRADO';
+            estadoSpan.className = 'badge bg-success';
+        }
+    }
+
+    function consultarCita() {
+        const documento = document.getElementById('mostrarDocumento').textContent;
+        
+        if (!documento || documento === '-') {
+            alert('No hay número de documento para consultar');
+            return;
+        }
+
+        fetch(`https://reniec-3mfu.onrender.com/citas/consultar?documento=${documento}`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+            }
+        })
+        .then(response => {
+            if (response.ok) {
+                return response.json();
+            }
+            throw new Error('Error en la consulta');
+        })
+        .then(data => {
+            console.log('Datos consultados:', data);
+            if (data) {
+                mostrarDatos(data);
+                document.getElementById('estadoSolicitud').textContent = 'ACTUALIZADO';
+                document.getElementById('estadoSolicitud').className = 'badge bg-info';
+                alert('Estado actualizado correctamente');
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('Error al consultar el estado de la cita');
+        });
+    }
+
+    function consultarUltimaCita() {
+        // Método GET para obtener la última cita registrada
+        fetch('https://reniec-3mfu.onrender.com/citas/ultima', {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+            }
+        })
+        .then(response => {
+            if (response.ok) {
+                return response.json();
+            }
+            throw new Error('No se pudo obtener la última cita');
+        })
+        .then(data => {
+            console.log('Última cita:', data);
+            mostrarDatos(data);
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            // Mantener datos por defecto si no se puede consultar
+        });
+    }
+    </script>
 </body>
 
 </html>
+
