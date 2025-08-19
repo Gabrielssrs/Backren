@@ -50,7 +50,7 @@
             <div class="row justify-content-center">
                 <div class="col-lg-5 col-md-7 col-sm-10">
                     <div class="login-card shadow-lg p-4 p-md-5 rounded-4">
-                        <h1 class="mb-4 fw-bold">Registro de Datos</h1>
+                        <h1 class="mb-4 fw-bold">Validacion de Datos</h1>
                         <form>
                             <div class="mb-3">
                                 <label for="dni" class="form-label fw-bold">DNI</label>
@@ -61,7 +61,7 @@
                                 <input type="text" class="form-control" id="ubigeo" placeholder="">
                             </div>
                             <div class="container-fluid"><br>
-                                <button type="submit" class="mi-boton-personalizado">INICIAR</button>
+                                <button type="submit" class="mi-boton-personalizado">Validar</button>
                             </div><br>
                             <div class="text-center">
                                 <a href="#" class="text-primary fw-bold" style="font-size: 0.95rem;">¿OLVIDASTE TU
@@ -159,33 +159,26 @@
             return;
         }
 
-        const data = {
-            dni: dni,
-            ubigeo: ubigeo
-        };
-
-        console.log('Enviando datos:', data); // Agregar esta línea
-
-        fetch('https://reniec-3mfu.onrender.com/registro/registrar', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(data),
-        })
+        // Usar el nuevo método de validación con GET
+        fetch(`https://reniec-3mfu.onrender.com/api/validar?dni=${dni}&ubigeo=${ubigeo}`)
         .then(response => {
             if (response.ok) {
-                return response.text(); // El controlador devuelve String
+                return response.json(); // El nuevo controlador devuelve boolean
             }
             throw new Error('Error en la validación. Código de estado: ' + response.status);
         })
-        .then(responseData => {
-            console.log('Success:', responseData);
-            // Guardar datos validados en localStorage
-            localStorage.setItem('datosValidados', JSON.stringify(data));
-            alert('¡Validación exitosa! ' + responseData);
-            document.querySelector('form').reset();
-            window.location.href = 'cita.html';
+        .then(isValid => {
+            console.log('Validación:', isValid);
+            if (isValid) {
+                // Guardar datos validados en localStorage
+                const data = { dni: dni, ubigeo: ubigeo };
+                localStorage.setItem('datosValidados', JSON.stringify(data));
+                alert('¡Validación exitosa!');
+                document.querySelector('form').reset();
+                window.location.href = 'cita.html';
+            } else {
+                alert('Los datos ingresados no son válidos. Verifique su DNI y UBIGEO.');
+            }
         })
         .catch((error) => {
             console.error('Error:', error);
